@@ -1,16 +1,24 @@
-# Contributing to miyamoto-portfolio
+# miyamoto-portfolio 開発ルール
+このプロジェクトは個人開発ですが、ルールを整理します。
 
-## Commit Rules
+## コミットルール
 
-- Use imperative mood for commit messages
-- Format: `type(scope): message`
-- Types:
-  - feat: new feature
-  - fix: bug fix
-  - docs: documentation
-  - style: formatting, no code change
-  - refactor: code restructuring
-  - test: adding or fixing tests
-  - chore: maintenance
-- Keep commits small and focused
-- Run tests and linters before pushing
+- コミットメッセージは命令形で書く
+- 形式: `type(scope): メッセージ`
+  - **type の例**
+    - `feat`: 新機能
+    - `change`: 変更
+    - `fix`: バグ修正
+    - `docs`: ドキュメント
+    - `style`: 書式変更のみ（コードは変更しない）
+    - `refactor`: リファクタリング
+    - `test`: テスト追加・修正
+    - `chore`: メンテナンス作業
+  - **例**: `feat(homepage): ヒーローセクションを追加`
+- Push 前に lint やテストを実行
+
+## ブランチルール
+- 変更は main で作業してOK
+- 必要あればブランチを作成してください。
+  ```bash
+  git checkout -b feature/機能名
