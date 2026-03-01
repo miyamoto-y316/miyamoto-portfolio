@@ -18,9 +18,8 @@ export default function HorizontalScroll() {
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
-          pin: true,              // セクション固定
-          scrub: 1,               // スクロールと同期
-          snap: 1 / (sections.length - 1), // スナップ
+          pin: true,
+          scrub: 1,
           end: () =>
             "+=" + window.innerWidth * sections.length,
         },
@@ -32,6 +31,9 @@ export default function HorizontalScroll() {
 
   return (
     <section ref={containerRef} className="relative h-screen overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 w-12 h-12 bg-red-500 rounded-full -translate-x-1/2 -translate-y-1/2 z-50">
+        {/* ここにペンのアイコンや画像を入れられます */}
+      </div>
       <div className="flex">
         <div className="panel min-w-full h-screen flex items-center justify-center">
           <h2 className="text-4xl font-bold">Miyamoto Portfolio</h2>
