@@ -1,12 +1,15 @@
 "use client";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
     <section className="min-h-screen flex items-center justify-center bg-white gap-8 px-80">
-      <img
+      <Image
         src="/images/miyamoto_character.png"
         alt="宮本優聖"
-        className="w-80 h-80 object-contain"
+        width={320}
+        height={320}
+        className="floating"
       />
       <div
         className="relative rounded-full p-6 h-80 w-full flex items-center justify-center"
