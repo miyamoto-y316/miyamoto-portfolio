@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import styles from "./About.module.css";
 
 export default function AboutSection() {
   return (
@@ -9,7 +10,7 @@ export default function AboutSection() {
         alt="宮本優聖"
         width={320}
         height={320}
-        className="floating"
+        className={styles.image}
       />
       <div
         className="relative rounded-full p-6 h-80 w-full flex items-center justify-center"
