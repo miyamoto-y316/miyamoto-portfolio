@@ -7,16 +7,19 @@ export default function Skill() {
         backGroundColor="#F7DF1E33"
         iconSrc="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
         skillTitle="JavaScript"
+        label="実務経験2年"
       />
       <SkillCard
         backGroundColor="#1677C733"
         iconSrc="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
         skillTitle="TypeScript"
+        label="実務経験2年"
       />
       <SkillCard
         backGroundColor="#53C1DE33"
         iconSrc="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
         skillTitle="React"
+        label="実務経験2年"
       />
     </div>
   );
