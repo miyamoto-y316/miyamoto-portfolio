@@ -4,7 +4,7 @@ import styles from "./About.module.css";
 
 export default function AboutSection() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-white gap-8 px-80">
+    <section className="min-h-screen flex items-center justify-center gap-8">
       <Image
         src="/images/miyamoto_character.png"
         alt="宮本優聖"
