@@ -1,3 +1,5 @@
+"use client";
+
 import { Grid } from "@mui/material";
 import SkillCard from "@/components/molecules/SkillCard";
 
