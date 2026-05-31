@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import styles from "./About.module.css";
+import styles from "./SectionAbout.module.css";
 
-export default function AboutSection() {
+export default function SectionAbout() {
   return (
     <section className="min-h-screen flex items-center justify-center gap-8">
       <Image
