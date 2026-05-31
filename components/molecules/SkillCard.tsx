@@ -1,24 +1,32 @@
 "use client";
 
 export type SkillCardProps = {
-  backGroundColor: string;
+  color: string;
   label: string;
+  labelTextColor: "black" | "white";
   skillTitle: string;
   iconSrc: string;
 };
 
 export default function SkillCard({
-  backGroundColor,
+  color,
   label,
+  labelTextColor,
   iconSrc,
   skillTitle,
 }: SkillCardProps) {
   return (
     <div
       className="relative w-1/4 aspect-square rounded-tl-[48px] rounded-tr-none rounded-br-3xl rounded-bl-3xl flex flex-col items-center justify-center gap-2"
-      style={{ backgroundColor: backGroundColor }}
+      style={{ backgroundColor: `${color}33` }}
     >
-      <span className="absolute top-0 right-0 text-xs  bg-black text-white px-2 py-1">
+      <span
+        className="absolute top-0 right-0 text-xs px-2 py-1"
+        style={{
+          color: labelTextColor,
+          backgroundColor: color,
+        }}
+      >
         実務経験{label}年
       </span>
       <img
