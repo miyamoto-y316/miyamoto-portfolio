@@ -17,7 +17,7 @@ export default function SkillCard({
 }: SkillCardProps) {
   return (
     <div
-      className="relative w-1/4 aspect-square rounded-tl-[48px] rounded-tr-none rounded-br-3xl rounded-bl-3xl flex flex-col items-center justify-center gap-2"
+      className="relative aspect-square rounded-tl-[48px] rounded-tr-none rounded-br-3xl rounded-bl-3xl flex flex-col items-center justify-center gap-2"
       style={{ backgroundColor: `${color}33` }}
     >
       <span

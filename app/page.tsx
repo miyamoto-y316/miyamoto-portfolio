@@ -6,6 +6,7 @@ export default function Home() {
     <main className="px-6 md:px-16 lg:px-32 bg-white">
       <SectionAbout />
       <SectionSkill />
+      <div className="pt-30 bg-white"></div>
     </main>
   );
 }
