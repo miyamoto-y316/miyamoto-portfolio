@@ -2,18 +2,29 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-export default function CardWork() {
+export type SkillCardProps = {
+  workSrc: string;
+  srcAlt: string;
+  workTitle: string;
+};
+
+export default function CardWork({
+  workSrc,
+  srcAlt,
+  workTitle,
+}: SkillCardProps) {
   return (
     <Box
       sx={{
         height: 500,
         boxShadow: "4px 4px 15px rgba(0, 0, 0, 0.2)",
+        textAlign: "center",
       }}
     >
       <Box
         component="img"
-        src="/images/work1.png"
-        alt="不思議なおもちゃとパズルの世界"
+        src={workSrc}
+        alt={srcAlt}
         sx={{
           padding: 3,
           width: "100%",
@@ -22,9 +33,8 @@ export default function CardWork() {
           borderRadius: 10,
         }}
       />
-      {/* テキスト */}
-      <Typography sx={{ paddingLeft: 3, color: "#000000" }} variant="h5">
-        不思議なおもちゃとパズルの世界
+      <Typography sx={{ color: "#000000" }} variant="h5">
+        {workTitle}
       </Typography>
     </Box>
   );

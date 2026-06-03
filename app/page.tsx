@@ -12,7 +12,7 @@ export default function Home() {
       <SectionAbout />
       <SectionTitle title="Skill" />
       <SectionSkill />
-      <div className="pt-30 bg-white"></div>
+      <SectionTitle title="Works" />
       <SectionWork />
     </main>
   );
