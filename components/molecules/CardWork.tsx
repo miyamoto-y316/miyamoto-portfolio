@@ -7,12 +7,14 @@ export type SkillCardProps = {
   workSrc: string;
   srcAlt: string;
   workTitle: string;
+  ribbonTitle: string;
 };
 
 export default function CardWork({
   workSrc,
   srcAlt,
   workTitle,
+  ribbonTitle,
 }: SkillCardProps) {
   return (
     <Box
@@ -55,7 +57,7 @@ export default function CardWork({
             clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%, 20px 50%)",
           }}
         >
-          U22プログラミングコンテスト受賞
+          {ribbonTitle}
         </Box>
         {/* リボン本体 */}
         <Box
@@ -74,7 +76,7 @@ export default function CardWork({
             textShadow: "1px 1px 0px rgba(255, 255, 255, 1)",
           }}
         >
-          U22プログラミングコンテスト受賞
+          {ribbonTitle}
         </Box>
       </Box>
       <Typography sx={{ color: "#000000" }} variant="h5">

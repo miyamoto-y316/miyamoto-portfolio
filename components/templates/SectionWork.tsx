@@ -9,6 +9,7 @@ export default function Skill() {
       <Grid size={{ xs: 12, sm: 6, md: 1 }} />
       <Grid size={{ xs: 12, sm: 6, md: 5 }}>
         <CardWork
+          ribbonTitle="U22プログラミングコンテスト賞受賞"
           workSrc="/images/work1.png"
           srcAlt="不思議なおもちゃとパズルの世界"
           workTitle="不思議なおもちゃとパズルの世界"
@@ -16,6 +17,7 @@ export default function Skill() {
       </Grid>
       <Grid size={{ xs: 12, sm: 6, md: 5 }}>
         <CardWork
+          ribbonTitle="U22プログラミングコンテスト賞受賞"
           workSrc="/images/work2.png"
           srcAlt="GoRoom"
           workTitle="GoRoom"
