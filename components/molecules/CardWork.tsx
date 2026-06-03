@@ -1,6 +1,7 @@
 "use client";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import styles from "./CardWork.module.css";
 
 export type SkillCardProps = {
   workSrc: string;
@@ -15,6 +16,7 @@ export default function CardWork({
 }: SkillCardProps) {
   return (
     <Box
+      className={styles.card}
       sx={{
         height: 500,
         boxShadow: "4px 4px 15px rgba(0, 0, 0, 0.2)",
