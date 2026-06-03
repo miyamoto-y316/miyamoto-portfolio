@@ -1,5 +1,5 @@
 "use client";
-import styles from "./SkillCard.module.css";
+import styles from "./CardSkill.module.css";
 
 export type SkillCardProps = {
   color: string;
@@ -9,7 +9,7 @@ export type SkillCardProps = {
   iconSrc: string;
 };
 
-export default function SkillCard({
+export default function CardSkill({
   color,
   label,
   labelTextColor,
