@@ -33,7 +33,7 @@ export default function CardSkill({
         実務経験{label}年
       </span>
       <img
-        className="w-50 h-50"
+        className="w-50 h-50 mt-5"
         src={iconSrc}
         alt={skillTitle}
         style={{
