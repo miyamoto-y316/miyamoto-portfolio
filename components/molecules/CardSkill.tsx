@@ -1,5 +1,6 @@
 "use client";
 import styles from "./CardSkill.module.css";
+import Image from "next/image";
 
 export type SkillCardProps = {
   color: string;
@@ -32,7 +33,7 @@ export default function CardSkill({
       >
         実務経験{label}年
       </span>
-      <img
+      <Image
         className="w-50 h-50 mt-5"
         src={iconSrc}
         alt={skillTitle}
