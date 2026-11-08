@@ -17,11 +17,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
+      - name: checkout
+        # タグ一覧URL：https://github.com/actions/checkout/tags
+        uses: actions/checkout@v7.0.1
 
-      - name: Setup Node
-        uses: actions/setup-node@v4.4.0
+      - name: setup-node
+        # タグ一覧URL：https://github.com/actions/setup-node/tags
+        uses: actions/setup-node@v7.1.0
         with:
           node-version: 26
           cache: npm
@@ -34,8 +36,9 @@ jobs:
         run: npm run build
 
       # AWS 認証情報の設定
-      - name: Configure AWS
-        uses: aws-actions/configure-aws-credentials@v4
+      - name: configure-aws-credentials
+        # タグ一覧URL：https://github.com/aws-actions/configure-aws-credentials/tags
+        uses: aws-actions/configure-aws-credentials@v6.3.0
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
