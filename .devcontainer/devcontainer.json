@@ -1,0 +1,19 @@
+
+{
+  "name": "Miyamoto Portfolio",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "next",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "mhutchie.git-graph",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "forwardPorts": [3000],
+  "shutdownAction": "stopCompose"
+}
