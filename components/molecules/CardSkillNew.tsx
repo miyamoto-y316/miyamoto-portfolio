@@ -44,13 +44,36 @@ export default function GlassSphere({
             flex items-center justify-center
             w-full h-full
             rounded-full
-            border border-white/80
             bg-linear-to-br
-            from-white/70
-            via-sky-100/30
-            to-blue-200/20
+            from-sky-100/20
+            via-sky-100/50
+            to-blue-200/40
           "
         >
+          {/* Top Reflection */}
+          <div
+            className="
+        absolute
+        top-[10%] left-[10%]
+        w-[35%] h-[20%]
+        rounded-[50%]
+        bg-white
+        rotate-[-35deg]
+        blur-sm
+      "
+          />
+          {/* Bottom Reflection */}
+          <div
+            className="
+        absolute
+        bottom-[15%] right-[5%]
+        w-[45%] h-[20%]
+        bg-sky-300/60
+        rotate-[-35deg]
+        blur-xl
+      "
+          />
+
           {/* Icon */}
           <Image
             src={iconSrc}
