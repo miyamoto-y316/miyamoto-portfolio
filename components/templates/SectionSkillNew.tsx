@@ -76,32 +76,28 @@ const skills = [
 
 export default function Skill() {
   return (
-    <div className="flex flex-wrap justify-center gap-30">
+    <div className="flex flex-wrap justify-center gap-13">
       <CardSkillNew
-        label="2"
-        skillTitle="JavaScript"
+        skillName="JavaScript"
+        experience={2}
         iconSrc="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+        floatDelay={0.3}
       />
       <CardSkillNew
-        label="2"
-        skillTitle="TypeScript"
         iconSrc="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-        experienceBgColor="#1677C7"
-        experienceTextColor="white"
+        skillName="TypeScript"
+        experience={0.4}
       />
       <CardSkillNew
-        label="2"
-        skillTitle="Nuxt"
         iconSrc="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nuxtjs/nuxtjs-original.svg"
-        experienceBgColor="#3B8070"
-        experienceTextColor="white"
+        skillName="Nuxt"
+        experience={2}
+        floatDelay={0.9}
       />
       <CardSkillNew
-        label="1"
-        skillTitle="React"
         iconSrc="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
-        experienceBgColor="#53C1DE"
-        experienceTextColor="white"
+        skillName="React"
+        experience={1}
       />
     </div>
   );

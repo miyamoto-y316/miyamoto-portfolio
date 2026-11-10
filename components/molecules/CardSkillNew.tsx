@@ -1,33 +1,73 @@
 "use client";
-import Image from "next/image";
 
-export type SkillCardProps = {
-  label: string;
-  skillTitle: string;
+import Image from "next/image";
+import { motion } from "framer-motion";
+
+type GlassSphereProps = {
   iconSrc: string;
-  width?: string; // 追加: カードの幅を指定できるようにする（例: "300px" や "20rem" など）
-  experienceBgColor?: string; // 追加: 背景色（カラーコードやTailwindカラー名）を指定できるようにする
-  experienceTextColor?: "black" | "white"; // 文字色を "black" か "white" のみに制限
+  alt?: string;
+  size?: number;
+  floatDelay?: number;
+  skillName?: string; // 追加: 型定義に含める
+  experience?: string | number; // 追加: 型定義に含める
 };
 
-export default function CardSkill({
-  label,
+export default function GlassSphere({
   iconSrc,
-  skillTitle,
-  width = "180px", // デフォルトの幅（指定がない場合の初期値）
-  experienceBgColor = "#FDE047", // デフォルトの黄色（yellow-300相当）
-  experienceTextColor: textColor = "black", // デフォルトは黒
-}: SkillCardProps) {
+  alt = "Skill icon",
+  size = 140,
+  floatDelay = 0,
+  skillName,
+  experience,
+}: GlassSphereProps) {
   return (
-    <div className="flex flex-col items-end" style={{ width }}>
-      <Image src={iconSrc} alt={skillTitle} width={120} height={120} />
-      <span className="text-3xl">{skillTitle}</span>
-      <div
-        className="flex justify-between items-end w-full px-1 text-base"
-        style={{ backgroundColor: experienceBgColor, color: textColor }}
+    <div className="flex flex-col items-center gap-1">
+      {/* 浮遊するガラススフィア（アイコン）部分 */}
+      <motion.div
+        className="relative flex items-center justify-center"
+        animate={{
+          y: [0, -12, 0],
+        }}
+        transition={{
+          duration: 3.5,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: floatDelay,
+        }}
+        style={{
+          width: size,
+          height: size,
+        }}
       >
-        <span>開発歴</span>
-        <span className="text-xl font-medium">{label}年</span>
+        <div
+          className="
+            flex items-center justify-center
+            w-full h-full
+            rounded-full
+            border border-white/80
+            bg-linear-to-br
+            from-white/70
+            via-sky-100/30
+            to-blue-200/20
+          "
+        >
+          {/* Icon */}
+          <Image
+            src={iconSrc}
+            alt={alt}
+            width={Math.round(size * 0.57)}
+            height={Math.round(size * 0.57)}
+          />
+        </div>
+      </motion.div>
+
+      <div className="flex flex-col items-center">
+        {/* 経験年数 */}
+        {skillName && <span className="text-xl">{skillName}</span>}
+        {/* 経験年数 */}
+        {experience && (
+          <span className="text-xs  text-slate-400">経験年数 2年</span>
+        )}
       </div>
     </div>
   );
