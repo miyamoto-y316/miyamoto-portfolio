@@ -45,9 +45,13 @@ export default function GlassSphere({
             w-full h-full
             rounded-full
             bg-linear-to-br
-            from-sky-100/20
+            from-sky-100/50
             via-sky-100/50
-            to-blue-200/40
+            to-blue-200/80
+            /* エッジを際立たせる光のボーダー */
+            border border-white/90
+            /* 立体感を生むシャドウとインセット（内側）の光沢 */
+            shadow-[inset_0_2px_4px_rgba(255,255,255,0.8),5px_5px_15px_rgba(0,0,0,0.1)]
           "
         >
           {/* Top Reflection */}
@@ -89,7 +93,9 @@ export default function GlassSphere({
         {skillName && <span className="text-xl">{skillName}</span>}
         {/* 経験年数 */}
         {experience && (
-          <span className="text-xs  text-slate-400">経験年数 2年</span>
+          <span className="text-xs  text-slate-400">
+            経験年数 {experience}年
+          </span>
         )}
       </div>
     </div>
