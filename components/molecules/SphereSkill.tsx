@@ -2,14 +2,34 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Chip from "@mui/material/Chip";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import RoomPreferencesIcon from "@mui/icons-material/RoomPreferences";
 
 type GlassSphereProps = {
   iconSrc: string;
   alt?: string;
   size?: number;
   floatDelay?: number;
-  skillName?: string; // 追加: 型定義に含める
-  experience?: string | number; // 追加: 型定義に含める
+  skillName: string;
+  experience: string | number;
+  experienceType: "pro" | "personal";
+};
+
+const chipStyles = {
+  pro: {
+    backgroundColor: "#DBEAFE",
+    color: "#1E3A8A",
+  },
+  personal: {
+    backgroundColor: "#DCFCE7",
+    color: "#15803D",
+  },
+};
+
+const chipIcons = {
+  pro: <BusinessCenterIcon />,
+  personal: <RoomPreferencesIcon />,
 };
 
 export default function GlassSphere({
@@ -19,6 +39,7 @@ export default function GlassSphere({
   floatDelay = 0,
   skillName,
   experience,
+  experienceType,
 }: GlassSphereProps) {
   return (
     <div className="flex flex-col items-center gap-1">
@@ -90,13 +111,30 @@ export default function GlassSphere({
 
       <div className="flex flex-col items-center">
         {/* 経験年数 */}
-        {skillName && <span className="text-xl">{skillName}</span>}
-        {/* 経験年数 */}
-        {experience && (
-          <span className="text-xs  text-slate-400">
-            経験年数 {experience}年
-          </span>
-        )}
+        {<span className="text-xl">{skillName}</span>}
+        {/* 経験年数：緑色のMUI Chip */}
+        {
+          <Chip
+            icon={chipIcons[experienceType ?? "personal"]}
+            label={`${experienceType === "pro" ? "実務経験" : "自主制作"} ${experience}年`}
+            size="small"
+            sx={{
+              ...chipStyles[experienceType ?? "personal"],
+              fontWeight: 600,
+              fontSize: "12px",
+              "& .MuiChip-icon": {
+                color: experienceType === "pro" ? "#1E3A8A" : "#0369A1",
+                fontSize: "16px",
+                marginRight: "-8px",
+                marginLeft: "8px",
+                marginBottom: "2px",
+              },
+              "& .MuiChip-label": {
+                px: 1.5,
+              },
+            }}
+          />
+        }
       </div>
     </div>
   );
